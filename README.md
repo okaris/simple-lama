@@ -20,7 +20,7 @@ This workflow can help achieve more realistic and context-aware inpainting resul
 
 | Original Image | Mask | Inpainted Result |
 |----------------|------|------------------|
-| ![Original](assets/original.png) | ![Mask](assets/mask.png) | ![Result](assets/result.png) |
+| ![Original](assets/bike.png) | ![Mask](assets/bike_mask.png) | ![Result](assets/bike_output.png) |
 
 In this example, we remove the tricycle from the image using the provided mask, and the LaMa model inpaints the area seamlessly.
 
