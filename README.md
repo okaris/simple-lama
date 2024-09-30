@@ -1,4 +1,4 @@
-# simple-lama-inpainting
+# Simple Lama
 
 <div align="center">
 Simple script for LaMa[1] inpainting using Hugging Face Hub.<br>
