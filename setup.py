@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="simple_lama",
-    version="0.1.1",
+    version="0.1.2",
     author="Omer Karisman",
     author_email="ok@okaris.com",
     description="Simple script for LaMa inpainting using Hugging Face Hub",
