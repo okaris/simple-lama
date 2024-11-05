@@ -7,15 +7,16 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#") and not line.startswith("--")]
 
 setup(
-    name="simple_lama",
-    version="0.1.2",
+    name="simple-lama",
+    version="0.1.4",
     author="Omer Karisman",
     author_email="ok@okaris.com",
     description="Simple script for LaMa inpainting using Hugging Face Hub",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/okaris/simple-lama",
-    packages=find_packages(),
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
@@ -28,9 +29,4 @@ setup(
     ],
     python_requires=">=3.8",
     install_requires=requirements,
-    entry_points={
-        "console_scripts": [
-            "simple-lama=simple_lama.simple_lama:main_cli",
-        ],
-    },
 ) 
