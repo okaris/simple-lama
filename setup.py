@@ -7,7 +7,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#") and not line.startswith("--")]
 
 setup(
-    name="simple-lama",
+    name="simple_lama",
     version="0.1.1",
     author="Omer Karisman",
     author_email="ok@okaris.com",
