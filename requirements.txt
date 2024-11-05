@@ -9,7 +9,7 @@ torch==2.1.2
 torchvision==0.16.2
 # Other dependencies
 opencv-python==4.10.0.84
-Pillow<10.0.0
+Pillow>=10.0.0
 numpy<2.0.0
 hf_transfer==0.1.8
 huggingface_hub==0.25.1
