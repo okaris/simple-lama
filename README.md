@@ -4,6 +4,47 @@
 Simple script for LaMa[1] inpainting using Hugging Face Hub.<br>
 </div>
 
+## Installation
+
+You can install the package directly from PyPI:
+
+```bash
+pip install simple-lama
+```
+
+Or install from source:
+
+```bash
+git clone https://github.com/okaris/simple-lama.git
+cd simple-lama
+pip install -e .
+```
+
+## Usage
+
+### Command Line Interface
+
+After installation, you can use the command line tool:
+
+```bash
+simple-lama --image_path path/to/image.png --mask_path path/to/mask.png --output path/to/output.png
+```
+
+### Python API
+
+```python
+from simple_lama import SimpleLama
+from PIL import Image
+
+lama = SimpleLama()
+
+image = Image.open("path/to/image.png")
+mask = Image.open("path/to/mask.png").convert('L')
+
+result = lama(image, mask)
+result.save("inpainted.png")
+```
+
 ## Description
 
 This project provides a simple implementation of the LaMa (Large Mask) inpainting model. It uses the Hugging Face Hub to download the pre-trained model and performs inpainting on images with given masks.
@@ -25,52 +66,6 @@ This workflow can help achieve more realistic and context-aware inpainting resul
 In this example, we remove the tricycle from the image using the provided mask, and the LaMa model inpaints the area seamlessly.
 
 Photo credit: Photo by <a href="https://unsplash.com/@dolfoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Rodolfo Mari</a> on <a href="https://unsplash.com/photos/red-radio-flyer-trike-on-brown-dried-leaves-2sNnC0zDOBQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-
-## Installation
-
-1. Clone the repository:
-````bash
-git clone https://github.com/okaris/simple-lama.git
-cd simple-lama
-````
-
-2. Set up a virtual environment (optional but recommended):
-````bash
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-````
-
-3. Install the required dependencies:
-````bash
-pip install -r requirements.txt
-````
-
-## Usage
-
-### Command Line Interface
-
-You can use the script directly from the command line:
-
-````bash
-python simple_lama.py --image_path path/to/image.png --mask_path path/to/mask.png --output path/to/output.png
-````
-
-### Integration in Your Code
-
-You can also use the `SimpleLama` class in your Python code:
-
-```python
-from simple_lama import SimpleLama
-from PIL import Image
-
-lama = SimpleLama()
-
-image = Image.open("path/to/image.png")
-mask = Image.open("path/to/mask.png").convert('L')
-
-result = lama(image, mask)
-result.save("inpainted.png")
-````
 
 ## Input Formats
 

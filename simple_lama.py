@@ -92,7 +92,7 @@ def main(image_path: str, mask_path: str, out_path: str):
     result.save(out_path)
     print(f"Inpainted image saved to {out_path}")
 
-if __name__ == "__main__":
+def main_cli():
     parser = argparse.ArgumentParser(description="Apply LaMa inpainting using given image and mask.")
     parser.add_argument("--image_path", type=str, required=True, help="Path to input image (RGB)")
     parser.add_argument("--mask_path", type=str, required=True, help="Path to input mask (Binary 1-CH Image. Pixels with value 255 will be inpainted)")
@@ -100,3 +100,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     main(args.image_path, args.mask_path, args.output)
+
+if __name__ == "__main__":
+    main_cli()
